@@ -3,7 +3,7 @@
 ..\output\cmdprase.o: ..\SYSTEM\sys\sys.h
 ..\output\cmdprase.o: ..\USER\stm32f10x.h
 ..\output\cmdprase.o: ..\CORE\core_cm3.h
-..\output\cmdprase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\cmdprase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\cmdprase.o: ..\USER\system_stm32f10x.h
 ..\output\cmdprase.o: ..\USER\stm32f10x_conf.h
 ..\output\cmdprase.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -36,8 +36,8 @@
 ..\output\cmdprase.o: ..\HARDWARE\ADC\ADC.h
 ..\output\cmdprase.o: ..\HARDWARE\Motor\motor.h
 ..\output\cmdprase.o: ..\SYSTEM\delay\delay.h
-..\output\cmdprase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\output\cmdprase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\cmdprase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\cmdprase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\output\cmdprase.o: ..\SYSTEM\usart\usart.h
 ..\output\cmdprase.o: ..\HARDWARE\EYE\eye.h
 ..\output\cmdprase.o: ..\HARDWARE\UltrasonicWave\UltrasonicWave.h

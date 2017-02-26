@@ -85,32 +85,6 @@ void UltrasonicWave_Configuration(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;	         
 	GPIO_Init(ECHO_PORT,&GPIO_InitStructure);						 	//初始化GPIOA
 
-	//GPIOE.11	  中断线以及中断初始化配置
-//	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource11);
-
-//	EXTI_InitStructure.EXTI_Line=EXTI_Line11;
-//	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;	
-//	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
-//	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-//	EXTI_Init(&EXTI_InitStructure);		//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
-//	
-//	//GPIOE.13
-//	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource13);
-
-//	EXTI_InitStructure.EXTI_Line=EXTI_Line13;
-//	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;	
-//	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
-//	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-//	EXTI_Init(&EXTI_InitStructure);		//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
-//	
-//	//GPIOE.15
-//	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource15);
-
-//	EXTI_InitStructure.EXTI_Line=EXTI_Line15;
-//	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;	
-//	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
-//	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-//	EXTI_Init(&EXTI_InitStructure);		//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
 	SONAR_TRIG(0, LOW);
 	SONAR_TRIG(1, LOW);
 	SONAR_TRIG(2, LOW);
@@ -313,17 +287,6 @@ static void sonar_distance(uint8_t ch)
 
     g_sonar[g_sonar_ch].distance = (uint32_t)d;
 	
-	if(g_sonar[g_sonar_ch].distance < g_sonar[g_sonar_ch].obsdistance)
-	{
-		g_sonar[g_sonar_ch].obsflg = 1;
-		g_u8ObstFlg |= 1<< g_sonar_ch;
-	}
-	else
-	{
-		g_sonar[g_sonar_ch].obsflg = 0;
-		g_u8ObstFlg &= ~(1<< g_sonar_ch);
-	}
-	
 	if(g_sonar_ch == 2)
 	{
 		
@@ -410,62 +373,62 @@ void sonar_heartbeat(void)
     return ;
 }
 
-void SetObstDis(uint8_t dis1, uint8_t dis2, uint8_t dis3)
-{
-	g_sonar[0].obsdistance = dis1;
-	g_sonar[1].obsdistance = dis2;
-	g_sonar[2].obsdistance = dis3;
-}
+//void SetObstDis(uint8_t dis1, uint8_t dis2, uint8_t dis3)
+//{
+//	g_sonar[0].obsdistance = dis1;
+//	g_sonar[1].obsdistance = dis2;
+//	g_sonar[2].obsdistance = dis3;
+//}
 
-void WriteObstDisToFlash(uint16_t dis1, uint16_t dis2, uint16_t dis3)
-{
-	STMFLASH_Write(OBST0_DIS_ADDR,&dis1,1);
-	STMFLASH_Write(OBST1_DIS_ADDR,&dis2,1);
-	STMFLASH_Write(OBST2_DIS_ADDR,&dis3,1);
-}
+//void WriteObstDisToFlash(uint16_t dis1, uint16_t dis2, uint16_t dis3)
+//{
+//	STMFLASH_Write(OBST0_DIS_ADDR,&dis1,1);
+//	STMFLASH_Write(OBST1_DIS_ADDR,&dis2,1);
+//	STMFLASH_Write(OBST2_DIS_ADDR,&dis3,1);
+//}
 
-void WriteObstCheckToFlash(uint16_t _check_bit)
-{
-	STMFLASH_Write(OBST_BIT_CHECK_ADDR,&_check_bit,1);
-}
+//void WriteObstCheckToFlash(uint16_t _check_bit)
+//{
+//	STMFLASH_Write(OBST_BIT_CHECK_ADDR,&_check_bit,1);
+//}
 
-void ObstDisFLASHCheck()
-{
-	if( STMFLASH_ReadHalfWord(OBST0_DIS_ADDR) < 100)
-	{
-		g_sonar[0].obsdistance = (uint8_t)STMFLASH_ReadHalfWord(OBST0_DIS_ADDR);
-	}
-	else
-	{
-		g_sonar[0].obsdistance = OBST_BASE_DIS;
-	}
-	
-	if( STMFLASH_ReadHalfWord(OBST1_DIS_ADDR) < 100)
-	{
-		g_sonar[0].obsdistance = (uint8_t)STMFLASH_ReadHalfWord(OBST1_DIS_ADDR);
-	}
-	else
-	{
-		g_sonar[0].obsdistance = OBST_BASE_DIS;
-	}
-	
-	if( STMFLASH_ReadHalfWord(OBST2_DIS_ADDR) < 100)
-	{
-		g_sonar[0].obsdistance = (uint8_t)STMFLASH_ReadHalfWord(OBST2_DIS_ADDR);
-	}
-	else
-	{
-		g_sonar[0].obsdistance = OBST_BASE_DIS;
-	}
-	
-	if( (STMFLASH_ReadHalfWord(OBST_BIT_CHECK_ADDR) & 0x0f) < 7)
-	{
-		g_u8ObstCheckFlg = (uint8_t)STMFLASH_ReadHalfWord(OBST_BIT_CHECK_ADDR);
-	}
-	else
-	{
-		g_u8ObstCheckFlg = 0x07;
-	}
-}
+//void ObstDisFLASHCheck()
+//{
+//	if( STMFLASH_ReadHalfWord(OBST0_DIS_ADDR) < 100)
+//	{
+//		g_sonar[0].obsdistance = (uint8_t)STMFLASH_ReadHalfWord(OBST0_DIS_ADDR);
+//	}
+//	else
+//	{
+//		g_sonar[0].obsdistance = OBST_BASE_DIS;
+//	}
+//	
+//	if( STMFLASH_ReadHalfWord(OBST1_DIS_ADDR) < 100)
+//	{
+//		g_sonar[0].obsdistance = (uint8_t)STMFLASH_ReadHalfWord(OBST1_DIS_ADDR);
+//	}
+//	else
+//	{
+//		g_sonar[0].obsdistance = OBST_BASE_DIS;
+//	}
+//	
+//	if( STMFLASH_ReadHalfWord(OBST2_DIS_ADDR) < 100)
+//	{
+//		g_sonar[0].obsdistance = (uint8_t)STMFLASH_ReadHalfWord(OBST2_DIS_ADDR);
+//	}
+//	else
+//	{
+//		g_sonar[0].obsdistance = OBST_BASE_DIS;
+//	}
+//	
+//	if( (STMFLASH_ReadHalfWord(OBST_BIT_CHECK_ADDR) & 0x0f) < 7)
+//	{
+//		g_u8ObstCheckFlg = (uint8_t)STMFLASH_ReadHalfWord(OBST_BIT_CHECK_ADDR);
+//	}
+//	else
+//	{
+//		g_u8ObstCheckFlg = 0x07;
+//	}
+//}
 
 /*****************************************************End Of Flie***************************************/

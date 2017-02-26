@@ -3,7 +3,7 @@
 ..\output\ultrasonicwave.o: ..\SYSTEM\sys\sys.h
 ..\output\ultrasonicwave.o: ..\USER\stm32f10x.h
 ..\output\ultrasonicwave.o: ..\CORE\core_cm3.h
-..\output\ultrasonicwave.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\ultrasonicwave.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\ultrasonicwave.o: ..\USER\system_stm32f10x.h
 ..\output\ultrasonicwave.o: ..\USER\stm32f10x_conf.h
 ..\output\ultrasonicwave.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -30,9 +30,9 @@
 ..\output\ultrasonicwave.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\output\ultrasonicwave.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\output\ultrasonicwave.o: ..\STM32F10x_FWLib\inc\misc.h
-..\output\ultrasonicwave.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\ultrasonicwave.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\output\ultrasonicwave.o: ..\SYSTEM\usart\usart.h
-..\output\ultrasonicwave.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\ultrasonicwave.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\ultrasonicwave.o: ..\SYSTEM\usart\ring_buffer.h
 ..\output\ultrasonicwave.o: ..\HARDWARE\TIMER\timer.h
 ..\output\ultrasonicwave.o: ..\SYSTEM\delay\delay.h

@@ -139,49 +139,49 @@ void CMDLimitSet(uint8_t _cmd)
 
 void CMDObstSet(uint8_t _CmdID, uint16_t ObstDis0,uint16_t ObstDis1,uint16_t ObstDis2)
 {
-	switch(_CmdID)
-	{
-		case EN_ALL:
-		{
-			g_u8ObstCheckFlg = 0x07;
-			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
-			
-			break;
-		}
-		case DISEN_ALL:
-		{
-			g_u8ObstCheckFlg = 0x00;
-			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
-			break;
-		}
-		case DISEN_CH1:
-		{
-			g_u8ObstCheckFlg = 0x06;
-			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
-			//WriteObstDisToFlash(ObstDis0, ObstDis1, ObstDis2);
-			break;
-		}
-		case DISEN_CH2:
-		{
-			g_u8ObstCheckFlg = 0x05;
-			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
-			break;
-		}
-		case DISEN_CH3:
-		{
-			g_u8ObstCheckFlg = 0x03;
-			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
-			break;
-		}
-		case SET_DIS:
-		{
-			SetObstDis(ObstDis0, ObstDis1, ObstDis2);
-			WriteObstDisToFlash(ObstDis0, ObstDis1, ObstDis2);
-			break;
-		}
-		default:
-			break;
-	}
+//	switch(_CmdID)
+//	{
+//		case EN_ALL:
+//		{
+//			g_u8ObstCheckFlg = 0x07;
+//			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
+//			
+//			break;
+//		}
+//		case DISEN_ALL:
+//		{
+//			g_u8ObstCheckFlg = 0x00;
+//			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
+//			break;
+//		}
+//		case DISEN_CH1:
+//		{
+//			g_u8ObstCheckFlg = 0x06;
+//			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
+//			//WriteObstDisToFlash(ObstDis0, ObstDis1, ObstDis2);
+//			break;
+//		}
+//		case DISEN_CH2:
+//		{
+//			g_u8ObstCheckFlg = 0x05;
+//			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
+//			break;
+//		}
+//		case DISEN_CH3:
+//		{
+//			g_u8ObstCheckFlg = 0x03;
+//			WriteObstCheckToFlash((uint16_t)g_u8ObstCheckFlg);
+//			break;
+//		}
+//		case SET_DIS:
+//		{
+//			SetObstDis(ObstDis0, ObstDis1, ObstDis2);
+//			WriteObstDisToFlash(ObstDis0, ObstDis1, ObstDis2);
+//			break;
+//		}
+//		default:
+//			break;
+//	}
 }
 
 void CMDExpressSet(uint8_t ExpressID)
@@ -229,8 +229,8 @@ void CMDPrase()
 			}
 			case CMD_OBST:
 			{
-				CMDObstSet( CMDBlk.CMDBodyBlk.u8ObstFlag, CMDBlk.CMDBodyBlk.u8ObstDis0,
-							CMDBlk.CMDBodyBlk.u8ObstDis1, CMDBlk.CMDBodyBlk.u8ObstDis2 );
+//				CMDObstSet( CMDBlk.CMDBodyBlk.u8ObstFlag, CMDBlk.CMDBodyBlk.u8ObstDis0,
+//							CMDBlk.CMDBodyBlk.u8ObstDis1, CMDBlk.CMDBodyBlk.u8ObstDis2 );
 				break;
 				
 			}
@@ -255,7 +255,7 @@ void SendMsg()
 {
 	
 	TxCMDBlk.CMDBodyBlk.u8HeadFlag = 0x02;
-	TxCMDBlk.CMDBodyBlk .u8ObstDis0 = g_u8ObstFlg;
+	TxCMDBlk.CMDBodyBlk .u8ObstDis0 = g_sonar[0].distance;
 	TxCMDBlk.CMDBodyBlk .u8ObstDis1 = g_sonar[1].distance;
 	TxCMDBlk.CMDBodyBlk .u8ObstDis2 = g_sonar[2].distance;
 	TxCMDBlk.CMDBodyBlk.u8ErrMsg = g_u8ErrID;

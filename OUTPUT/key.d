@@ -1,7 +1,7 @@
 ..\output\key.o: ..\HARDWARE\KEY\key.c
 ..\output\key.o: ..\USER\stm32f10x.h
 ..\output\key.o: ..\CORE\core_cm3.h
-..\output\key.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\key.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\key.o: ..\USER\system_stm32f10x.h
 ..\output\key.o: ..\USER\stm32f10x_conf.h
 ..\output\key.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

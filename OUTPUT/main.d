@@ -2,7 +2,7 @@
 ..\output\main.o: ..\HARDWARE\LED\led.h
 ..\output\main.o: ..\USER\stm32f10x.h
 ..\output\main.o: ..\CORE\core_cm3.h
-..\output\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\main.o: ..\USER\system_stm32f10x.h
 ..\output\main.o: ..\USER\stm32f10x_conf.h
 ..\output\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -33,12 +33,12 @@
 ..\output\main.o: ..\SYSTEM\sys\sys.h
 ..\output\main.o: ..\HARDWARE\KEY\key.h
 ..\output\main.o: ..\SYSTEM\usart\usart.h
-..\output\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\main.o: ..\SYSTEM\usart\ring_buffer.h
 ..\output\main.o: ..\HARDWARE\EXTI\exti.h
 ..\output\main.o: ..\HARDWARE\TIMER\timer.h
 ..\output\main.o: ..\HARDWARE\UltrasonicWave\UltrasonicWave.h
-..\output\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\output\main.o: ..\HARDWARE\IIC\i2c.h
 ..\output\main.o: CmdPrase.h
 ..\output\main.o: ..\HARDWARE\POSTURE\Posture.h

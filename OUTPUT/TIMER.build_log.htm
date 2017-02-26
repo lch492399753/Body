@@ -3,57 +3,47 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.14.0.0
-Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 1, 1, LIC=UJWSB-247Q7-SB9EJ-U4SKL-MF38X-QYIUK
+IDE-Version: ¦ÌVision V5.22.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 Microsoft, Microsoft, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
-Toolchain Path:  d:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.05 update 1 (build 106)
-Assembler:       Armasm.exe V5.05 update 1 (build 106)
-Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
-Library Manager: ArmAr.exe V5.05 update 1 (build 106)
-Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
-CPU DLL:         SARMCM3.DLL V5.14.0.0
-Dialog DLL:      DCM.DLL V1.13.1.0
-Target DLL:      Segger\JL2CM3.dll V2.99.13.0
-Dialog DLL:      TCM.DLL V1.14.4.0
+Toolchain:       MDK-Lite  Version: 5.22
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARMCM3.DLL V5.22
+Dialog DLL:      DCM.DLL V1.13.9.0
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TCM.DLL V1.21.0.0
  
 <h2>Project:</h2>
-G:\miclound\STM32³¬Éù²¨²â¾à3Â·V1.01 1\CZRobotBody\USER\TIMER.uvprojx
+E:\CZRobot\Body\USER\TIMER.uvprojx
 Project File Date:  02/14/2017
 
 <h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling main.c...
-main.c(17): warning:  #177-D: variable "count" was declared but never referenced
-        int8_t count = 0;
-main.c(18): warning:  #177-D: variable "index" was declared but never referenced
-        uint8_t index = 0;
+main.c(17): warning:  #177-D: variable "count"  was declared but never referenced
+  	int8_t count = 0;
+main.c(18): warning:  #177-D: variable "index"  was declared but never referenced
+  	uint8_t index = 0;
 main.c: 2 warnings, 0 errors
-compiling CmdPrase.c...
-CmdPrase.c(195): warning:  #550-D: variable "u8CMDCheckSum" was set but never used
-        uint8_t u8CMDCheckSum = 0;
-CmdPrase.c: 1 warning, 0 errors
-compiling timer.c...
-compiling UltrasonicWave.c...
-..\USER\User_Config.h(26): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\HARDWARE\UltrasonicWave\UltrasonicWave.c(72): warning:  #177-D: variable "EXTI_InitStructure" was declared but never referenced
-        EXTI_InitTypeDef EXTI_InitStructure;
-..\HARDWARE\UltrasonicWave\UltrasonicWave.c: 2 warnings, 0 errors
-compiling Posture.c...
 linking...
-Program Size: Code=25680 RO-data=556 RW-data=88 ZI-data=4400  
+Program Size: Code=25220 RO-data=556 RW-data=88 ZI-data=4400  
 FromELF: creating hex file...
-"..\OUTPUT\TIMER.axf" - 0 Error(s), 5 Warning(s).
+"..\OUTPUT\TIMER.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  G:\miclound\STM32³¬Éù²¨²â¾à3Â·V1.01 1\CZRobotBody\USER\RTE
-  d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0
+  E:\CZRobot\Body\USER\RTE\_Target_1
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -42,7 +42,7 @@ int main(void)
 	
 	
 	GetStartAngel();
-	ObstDisFLASHCheck();
+//	ObstDisFLASHCheck();
 	AngelFLASHCheckAndGet();
 	uart_init(115200);
 	while(1)

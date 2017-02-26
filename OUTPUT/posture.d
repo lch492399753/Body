@@ -3,7 +3,7 @@
 ..\output\posture.o: ..\SYSTEM\sys\sys.h
 ..\output\posture.o: ..\USER\stm32f10x.h
 ..\output\posture.o: ..\CORE\core_cm3.h
-..\output\posture.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\posture.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\posture.o: ..\USER\system_stm32f10x.h
 ..\output\posture.o: ..\USER\stm32f10x_conf.h
 ..\output\posture.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -34,6 +34,6 @@
 ..\output\posture.o: ..\HARDWARE\ADC\ADC.h
 ..\output\posture.o: ..\HARDWARE\Motor\motor.h
 ..\output\posture.o: ..\SYSTEM\delay\delay.h
-..\output\posture.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\posture.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\posture.o: ..\SYSTEM\usart\Ring_buffer.h
-..\output\posture.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\posture.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
